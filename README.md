@@ -9,15 +9,18 @@ I use AI-assisted workflows (Claude Code, Cursor) for implementation, code revie
 <p><picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/divider-experience-mobile-dark.svg"><source media="(max-width: 600px)" srcset="assets/divider-experience-mobile-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/divider-experience-dark.svg"><img alt="01 — Leadership and experience" src="assets/divider-experience-light.svg" width="720"></picture></p>
 
 ### Team Lead · Talent Bridge
-**Hasoub AI Engineer Career Accelerator** · 2026 – present · team of five
+**Hasoub AI Engineer Career Accelerator** · 2026 – present · team of five · <sub>private repository</sub>
 
-A recruitment and career-support platform for Hasoub, with separate portals for candidates, recruiters and senior engineers. React + TypeScript frontend, FastAPI backend, PostgreSQL, Docker. I joined as the team's Scrum Master and now lead it as Team Lead.
+A recruitment and career-support platform with separate portals for candidates, recruiters and senior engineers, built by our team with Hasoub as the client. React + TypeScript, FastAPI, PostgreSQL, Docker.
 
-- **Technical coordination** — breaking work down, aligning frontend and backend, keeping the team unblocked
-- **Pull request reviews** — reviewing changes for correctness, consistency and maintainability
-- **Workflow** — improving how the team uses GitHub and Jira, from issues to merged PRs
-- **Quality** — pushing automated testing and code quality (pytest, Vitest, GitHub Actions)
-- **AI-assisted collaboration** — bringing Claude Code into day-to-day engineering, with review on every change
+**System design (team):** authorization is enforced server-side on every protected operation — hiding UI is never the security boundary. CV uploads create new versions and older ones are kept. AI features (CV feedback, candidate ranking) go through a provider-independent gateway: AI proposes, the backend decides. Mail, payment and job-source calls leave through a transactional outbox.
+
+**My role:** Scrum Master for the first month, now Team Lead — I run planning, task breakdown and technical discussions, and I still ship code: 54 of the team's 119 merged pull requests so far.
+
+- **Jira–GitHub review automation** — issue status driven by branch, PR and review state: reviewer handling, re-review after changes, merge-state sync. Rolled out in shadow mode first; hardened against review-event mismatches, approvals dismissed by new pushes, dispatch loops and race conditions.
+- **CI and test performance** — after hitting the Actions free-minute limit, measured billed minutes, workflow overhead, pytest runtime and the critical path, then cut them with dependency caching, de-duplicated integration gates, faster Vitest and a test-only password-hashing cost. Measured optimization, not deleted tests.
+- **AI-assisted engineering workflow** — a PR-review agent in the project's agent orchestrator, agent runtime permissions, and the team's shared working rules.
+- **Product features** — shared job catalog with structured metadata filters, admin user management, the application workflow, AI career-support services and role-gated portal routes.
 
 **Also** — building the *Elafandy B2B Platform* solo for a real wholesale business (Next.js, PostgreSQL, Prisma; in progress), and earlier co-founded *BuilderBond*, a construction-labor marketplace, as co-founder and frontend developer — presented at HIT FUTURE Demo Day.
 
